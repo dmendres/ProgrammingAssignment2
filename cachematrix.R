@@ -4,7 +4,7 @@
 ### The cached value of the inverse is used if the matrix hasn't been updated, otherwise the value is NULL
 
 ## makeCacheMatrix creates a cache holding a matrix and its inverse, 
-## with functions to manage the state of the cache and to compute the inverse
+## with functions to manage the state of the cache
 
 makeCacheMatrix <- function(x = matrix()) {
   mInv <- NULL
