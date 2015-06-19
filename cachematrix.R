@@ -1,9 +1,10 @@
 ## CacheMatrix provides two functions for managing a cached matrix inverse computation
 ### makeCacheMatrix creates the matrix cache, with an optional matrix
 ### cacheSolve solves for (and caches) the inverse of the matrix cached in its argument
-### The cached value is used if the matrix hasn't been updated, and the 
+### The cached value of the inverse is used if the matrix hasn't been updated, otherwise the value is NULL
 
-## Creates a cache holding a matrix and its inverse, with functions to manage the state of the cache
+## makeCacheMatrix creates a cache holding a matrix and its inverse, 
+## with functions to manage the state of the cache and to compute the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   mInv <- NULL
@@ -19,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Returns the inverse of a matrix stored in cache x, possibly computing it if the cached matrix has been updated.
+## cacheSolve returns the inverse of a matrix stored in cache x, possibly re-computing it if the cached matrix has been updated.
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
