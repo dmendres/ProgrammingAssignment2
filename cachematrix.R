@@ -30,12 +30,13 @@ cacheSolve <- function(x, ...) {
   x$getInv()  
 }
 
-#unit tests
-x <- makeCacheMatrix(matrix(1:4,2,2))
-cacheSolve(x)
-cacheSolve(makeCacheMatrix(cacheSolve(x)))
-m <- matrix()
-
-#non-trivial test
-x <- makeCacheMatrix(matrix(runif(100,max = 100), 10, 10))
-all.equal(cacheSolve(makeCacheMatrix(cacheSolve(x))),x$get())
+# #unit test
+# m<-matrix(1:4,2,2)
+# x <- makeCacheMatrix(m)
+# all.equal(m,x$get())
+# cacheSolve(x)
+# all.equal(m,cacheSolve(makeCacheMatrix(cacheSolve(x))))
+# 
+# #non-trivial test
+# x <- makeCacheMatrix(matrix(runif(100,max = 100), 10, 10))
+# all.equal(cacheSolve(makeCacheMatrix(cacheSolve(x))),x$get())
